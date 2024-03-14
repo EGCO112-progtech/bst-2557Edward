@@ -3,27 +3,27 @@
 #include "BST.h"
 int main( int argc, char** argv )
 { 
-   unsigned int i; // counter to loop from 1-10
-   int item; // variable to hold random values
+   unsigned int i; 
+   int item; 
    BST b;
 
    
-	b.root= NULL;  b.size=0;// tree initially empty
-for ( i = 1; i < argc; ++i ) { 
-      insertNode( &b, atoi(argv[i]));
-   //  insertNode_R(&b.root,atoi(argv[i]) );
-  } // end for
-   // traverse the tree preOrder
-   /* printf("\nThe preOrder traversal is:\n" );
-   preOrder( rootPtr );*/
+	b.root= NULL;  b.size=0;
+   for ( i = 1; i < argc; ++i ) { 
+      // insertNode( &b, atoi(argv[i]));
+      insertNode_R(&b.root,atoi(argv[i]) );
+   } 
 
-   // traverse the tree inOrder
-   printf("\nThe inOrder traversal is:\n" );
+   
+   printf("\npreOrder\n" );
+   preOrder( b.root );
+   printf("\npostOrder\n" );
+   postOrder( b.root);
+   printf("\ninOrder\n" );
    inOrder( b.root );
-/*
-   // traverse the tree postOrder
- printf("\nThe postnOrder traversal is:\n" );   postOrder( rootPtr );
-*/
-    printf("\n");
-} // end main
+   printf("\n");
+   Lap_print( b.root, 0);
+   printf("\n");
+
+} 
 
